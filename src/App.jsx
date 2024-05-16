@@ -1,13 +1,16 @@
-import Sidebar from './components/shared/Sidebar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/shared/Layout';
+import Home from './components/dashboard/Home';
 
 const App = () => {
   return (
-    <div className='flex'>
-      <Sidebar />
-      <div className='p-7'>
-        <h1 className='text-2xl font-semibold'>Home Page</h1>
-      </div>
-    </div>
+    <Router>
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  </Router>
   );
 };
 
