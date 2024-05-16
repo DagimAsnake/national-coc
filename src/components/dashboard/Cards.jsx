@@ -1,9 +1,34 @@
+import { useEffect} from 'react';
 import { FaUserPlus } from 'react-icons/fa';
 import { MdEditCalendar } from 'react-icons/md';
 import { FaBriefcase } from 'react-icons/fa';
 import { MdOutlineNoteAlt } from 'react-icons/md';
 
 const Cards = () => {
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://national-coc-api.lmis.gov.et/coc/data', {
+          headers: {
+            'Content-Type': 'application/json',
+            'authorization-key': 'a593e16f43bc2fa6132af7d823113f729ba32d8416120808a967'
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, []);
+
   const cardComponent = [
     { title: 'Total COC', icon: <FaUserPlus />, num: 1000 },
     { title: 'Total Completed', icon: <MdEditCalendar />, num: 100 },
