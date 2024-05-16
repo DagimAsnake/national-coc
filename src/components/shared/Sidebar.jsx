@@ -16,7 +16,7 @@ const Sidebar = () => {
     <div>
       <div
         className={`bg-gray-200 h-screen p-5 pt-8 ${
-          open ? ' w-60' : 'w-20'
+          open ? ' w-48' : 'w-20'
         } duration-300 relative`}
       >
         <BsArrowLeftShort

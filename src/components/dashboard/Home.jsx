@@ -1,9 +1,9 @@
-
+import Cards from "./Cards";
 
 const Home = () => {
   return (
-    <div className='p-7'>
-      <h1 className='text-2xl font-semibold'>Home Page</h1>
+    <div className='p-5'>
+      <Cards />
     </div>
   );
 };
