@@ -13,15 +13,15 @@ const Navbar = () => {
     <nav className='bg-neutral-100 p-4 border-b-2'>
       <div className='max-w-7xl mx-auto flex justify-between items-center'>
         <div className='flex items-center'>
-          <a href='#' className=' text-lg font-bold'>
+          <a href='#' className='text-lg font-bold text-green-900'>
             Ethiopian National COC
           </a>
         </div>
-        <div className='flex items-center gap-4 ml-20'>
+        <div className='flex items-center gap-4 mr-10'>
           <Popover className='relative'>
             <div className='flex items-center gap-4'>
-              <div className='font-medium text-lg text-end'>
-                <div>Amanual Belay</div>
+              <div className='text-end'>
+                <div className='text-base'>Amanual Belay</div>
                 <div className='text-sm text-gray-500 '>Medical Docter</div>
               </div>
               <PopoverButton>
