@@ -3,6 +3,7 @@ import Graph from './Graph';
 import TotalCoc from './TotalCoc';
 import CocProgress from './CocProgress';
 import TableData from './TableData';
+import ChartPage from './piechart/ChartPage';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       </div>
       <div className='w-full'>
         <CocProgress />
+        <ChartPage />
       </div>
     </div>
   );
