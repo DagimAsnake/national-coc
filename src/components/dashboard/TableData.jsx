@@ -10,7 +10,7 @@ const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
-    render: (_, record) => `${record.first_name} ${record.father_name} ${record.grand_father_name}`,
+    render: (_, record) => `${record.first_name} ${record.father_name}`,
   },
   {
     title: 'Assessed',
