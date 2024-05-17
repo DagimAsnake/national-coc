@@ -6,6 +6,7 @@ import { SiRotaryinternational } from "react-icons/si";
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
+    const [activeIndex, setActiveIndex] = useState(0);
 
   const Menus = [
     { title: 'Dashboard' },
@@ -45,9 +46,12 @@ const Sidebar = () => {
           {Menus.map((menu, index) => (
             <li
               key={index}
-              className={`text-sm flex items-center gap-x-4 cursor-pointer p-1 hover:bg-light-white rounded-md`}
+              className={`text-sm flex items-center gap-x-4 cursor-pointer p-1 rounded-md ${
+                activeIndex === index ? 'bg-slate-300' : 'hover:bg-light-white hover:bg-slate-300'
+              }`}
+              onClick={() => setActiveIndex(index)}
             >
-              <span className='text-2xl block float-left'>
+              <span className={`text-2xl block float-left ${activeIndex === index ? 'text-green-500' : ''}`}>
                 {menu.icon ? menu.icon : <RiDashboardFill />}
               </span>
               <span

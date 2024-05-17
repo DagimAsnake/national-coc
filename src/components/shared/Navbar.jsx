@@ -1,13 +1,35 @@
-import { useState } from 'react';
 import chicken from '../../assets/chicken.png';
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { Dropdown, Menu, message, Space } from 'antd';
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const onClick = ({ key }) => {
+    message.info(`Click on item ${key}`);
   };
+
+  const items = [
+    {
+      label: 'Profile',
+      key: '1',
+    },
+    {
+      label: 'Setting',
+      key: '2',
+    },
+    {
+      label: 'Sign Out',
+      key: '3',
+    },
+  ];
+
+  const menu = (
+    <Menu onClick={onClick}>
+      {items.map(item => (
+        <Menu.Item key={item.key} className="text-center border-b-2 mx-5">
+          {item.label}
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
 
   return (
     <nav className='bg-neutral-100 p-4 border-b-2'>
@@ -17,48 +39,28 @@ const Navbar = () => {
             Ethiopian National COC
           </a>
         </div>
-        <div className='flex items-center gap-4 mr-10'>
-          <Popover className='relative'>
-            <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-0 mr-10'>
+          <Dropdown 
+           overlay={menu}
+          >
+            <div className='flex items-center gap-1 cursor-pointer'>
               <div className='text-end'>
                 <div className='text-base'>Amanual Belay</div>
                 <div className='text-sm text-gray-500 '>Medical Docter</div>
               </div>
-              <PopoverButton>
-                <img
-                  id='avatarButton'
-                  type='button'
-                  onClick={toggleDropdown}
-                  className='w-10 h-10 rounded-full cursor-pointer'
-                  src={chicken}
-                  alt='User dropdown'
-                />
-              </PopoverButton>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  <img
+                    id='avatarButton'
+                    type='button'
+                    className='w-10 h-10 rounded-full'
+                    src={chicken}
+                    alt='User'
+                  />
+                </Space>
+              </a>
             </div>
-            <PopoverPanel
-              anchor='bottom'
-              className='flex flex-col bg-white border border-gray-200 rounded shadow-md p-5 px-16'
-            >
-              <a
-                href='/'
-                className='border-b mb-2 p-2 px-10 rounded-lg hover:bg-green-50'
-              >
-                Profile
-              </a>
-              <a
-                href='/'
-                className='border-b mb-2 p-2 px-10 rounded-lg hover:bg-green-50'
-              >
-                Setting
-              </a>
-              <a
-                href='/'
-                className='border-b mb-2 p-2 px-10 rounded-lg hover:bg-green-50'
-              >
-                Sign Out
-              </a>
-            </PopoverPanel>
-          </Popover>
+          </Dropdown>
         </div>
       </div>
     </nav>
