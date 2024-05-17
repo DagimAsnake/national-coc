@@ -2,10 +2,10 @@ import { PieChart, Pie, Cell } from 'recharts';
 
 const data = [
   { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
+  { name: 'Group B', value: 230 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F'];
+const COLORS = ['#EB0825', '#00C49F'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({

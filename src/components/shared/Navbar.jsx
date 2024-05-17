@@ -24,7 +24,7 @@ const Navbar = () => {
   const menu = (
     <Menu onClick={onClick}>
       {items.map(item => (
-        <Menu.Item key={item.key} className="text-center border-b-2 mx-5">
+        <Menu.Item key={item.key} className="text-center border-b mx-5">
           {item.label}
         </Menu.Item>
       ))}
