@@ -7,10 +7,10 @@ import ChartPage from './piechart/ChartPage';
 
 const Home = () => {
   return (
-    <div className='flex p-5'>
+    <div className='md:flex block p-5'>
       <div className='flex-col'>
         <Cards />
-        <div className='flex mt-5'>
+        <div className='md:flex mt-5'>
           <Graph />
           <TotalCoc />
         </div>
@@ -18,7 +18,7 @@ const Home = () => {
           <TableData />
         </div>
       </div>
-      <div className='w-full'>
+      <div className='md:w-full'>
         <CocProgress />
         <ChartPage />
       </div>
